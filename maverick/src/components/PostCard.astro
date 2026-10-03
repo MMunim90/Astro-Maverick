@@ -1,0 +1,16 @@
+---
+interface Props {
+    title: string;
+    description: string;
+    pubDate: Date;
+    url: string;
+}
+
+const {title, description, pubDate, url} = Astro.props;
+---
+
+<a href={url} class="card">
+    <h2>{title}</h2>
+    <p class="muted">{pubDate.toDateString()}</p>
+    <p>{description}</p>
+</a>
