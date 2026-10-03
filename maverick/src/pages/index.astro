@@ -1,27 +1,26 @@
 ---
-import {site} from '../data/site'
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { site } from "../data/site";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{site.name}</title>
-	</head>
-	<body>
-		<h1>Hi, I'm {site.name} 👋</h1>
-		<p>{site.role}</p>
-		<p>{site.bio}</p>
+<BaseLayout title="Home">
+  <section class="hero">
+    <h1>Hi, I'm {site.name} 👋</h1>
+    <p class="muted">{site.role}</p>
+    <p>{site.bio}</p>
 
-		<ul>
-			{site.socials.map((social) => (
-				<li><a href={social.url}>{social.label}</a></li>
-			))}
-		</ul>
+	{site.openToWork && <span class="tag">✅ Open to work</span>}
 
-		{site.openToWork && <span>✅ Open to work</span>}
-	</body>
-</html>
+    <ul class="socials">
+      {
+        site.socials.map((social) => (
+          <li>
+            <a href={social.url}>{social.label}</a>
+          </li>
+        ))
+      }
+    </ul>
+
+	<a href="/blog" class="btn">Read my blogs →</a>
+  </section>
+</BaseLayout>
