@@ -750,36 +750,15 @@ Monitoring
 
 # YouTube Video
 
-নিচের `VIDEO_ID`-এর জায়গায় তোমার YouTube video-এর ID বসিয়ে দাও।
-
-উদাহরণ:
-
-```text
-<!-- https://www.youtube.com/watch?v=dQw4w9WgXcQ -->
-https://youtu.be/vrnSaLUowVY?si=xvGJssLfc8SsIjYk
-```
-
-এখানে video ID হলো:
-
-```text
-dQw4w9WgXcQ
-```
-
-Astro Markdown-এ YouTube video inline দেখানোর জন্য:
-
-```html
 <div class="youtube-embed">
   <iframe
-    src="https://www.youtube.com/embed/xvGJssLfc8SsIjYk"
+    src="https://www.youtube.com/embed/vrnSaLUowVY?si=gns3MPGgzonHFAml"
     title="How a Server Actually Crashes"
     loading="lazy"
     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
     allowfullscreen
   ></iframe>
 </div>
-```
-
-এটি page-এর মধ্যে YouTube player/thumbnail দেখাবে এবং user player-এ click করলে video সেখানেই play হবে।
 
 <style>
 .youtube-embed {
